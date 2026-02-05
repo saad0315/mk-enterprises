@@ -1,0 +1,82 @@
+export const CONFIG = {
+  companyName: "MK Enterprises",
+  contact: {
+    phone: "021 32730 946",
+    altPhone: "00-92-21-2730-703",
+    fax: "00-92-21-2730-815",
+    email: "info@mkenterprises.com.pk",
+    address: "Siddiq Wahab Road, Old Haji Camp, Timber Market, Karachi-74000 Pakistan",
+  },
+  socialLinks: {
+    facebook: "https://facebook.com/mkenterprises",
+    twitter: "https://twitter.com/mkenterprises",
+    linkedin: "https://linkedin.com/company/mkenterprises",
+  },
+  navLinks: [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Company Profile", href: "/profile" },
+    {
+      name: "Products",
+      href: "/products",
+      dropdown: [
+        { name: "Burma Teak", href: "/products/burma-teak" },
+        { name: "Softwood", href: "/products/softwood" },
+      ],
+    },
+    { name: "Contact Us", href: "/contact" },
+  ],
+  groupCompanies: [
+    "Khalid Trading Company",
+    "Hasham Impex",
+    "Sarim Trade International",
+    "Subhan Traders",
+    "MK Timber",
+    "Sunlight Wood Products (Pvt.) Ltd.",
+    "Sindh High Pressure Laminates (Pvt.) Ltd. (SHPL)",
+    "Standard Board (Pvt.) Ltd.",
+    "World Lumber Trading",
+  ],
+  products: [
+    { name: "Burma Teak", image: "/product-burma-teak.png" },
+    { name: "Softwood", image: "/product-soft-wood.png" },
+    { name: "Plywood", image: "/product-plywood.png" },
+    { name: "Medium Light Hardwood", image: "/hero-timber.jpg" },
+    { name: "Laminate Flooring", image: "/hero-timber.jpg" },
+    { name: "PVC Edge Banding", image: "/hero-timber.jpg" },
+  ],
+  productRange: [
+    { title: "Burma Teak", description: "Premium quality teak for high-end furniture and construction.", icon: "TreeDeciduous" },
+    { title: "Softwood", description: "Versatile softwood solutions for various industrial applications.", icon: "Zap" },
+    { title: "Hardwood", description: "Durable and strong hardwood for heavy-duty structural use.", icon: "Hammer" },
+    { title: "Plywood", description: "High-grade plywood for versatile interior and exterior needs.", icon: "Layers" },
+    { title: "MDF & Boards", description: "Engineered wood products for modern cabinetry and design.", icon: "Box" },
+    { title: "Laminates", description: "High-pressure laminates for aesthetic and durable surfaces.", icon: "Shield" },
+  ],
+  testimonials: [
+    {
+      name: "Ahmed Raza",
+      role: "Construction Lead",
+      content: "MK Enterprises has been our go-to supplier for decades. Their Burma Teak quality is unmatched in the Karachi market.",
+      date: "Oct 12, 2025",
+    },
+    {
+      name: "Sajid Mehmood",
+      role: "Furniture Manufacturer",
+      content: "The consistency in their softwood imports has helped our production line tremendously. Highly recommended for industrial needs.",
+      date: "Nov 05, 2025",
+    },
+    {
+      name: "Zeeshan Khan",
+      role: "Interior Designer",
+      content: "Excellent variety of laminates and boards. The team is professional and delivery is always on time.",
+      date: "Dec 20, 2025",
+    },
+    {
+      name: "Imran Siddiqui",
+      role: "Architect",
+      content: "Reliable quality and honest dealings. They understand the technical requirements of large-scale projects.",
+      date: "Jan 15, 2026",
+    },
+  ],
+};
