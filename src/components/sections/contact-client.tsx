@@ -120,19 +120,19 @@ export default function ContactClient() {
                       <>
                         <a href={`tel:${CONFIG.contact.phone.replace(/\s+/g, '')}`} className="hover:text-white transition-colors">{CONFIG.contact.phone}</a>
                         <br/>
-                        <a href={`tel:${CONFIG.contact.altPhone}`} className="hover:text-white transition-colors">{CONFIG.contact.altPhone}</a>
+                        {/* <a href={`tel:${CONFIG.contact.altPhone}`} className="hover:text-white transition-colors">{CONFIG.contact.altPhone}</a> */}
                       </>
                     }
                    />
-                   <ContactItem 
+                   {/* <ContactItem 
                     icon={<Printer className="text-brand-primary" size={18} />}
                     label="Fax"
                     value={CONFIG.contact.fax}
-                   />
+                   /> */}
                    <ContactItem 
                     icon={<Globe className="text-brand-primary" size={18} />}
                     label="Website"
-                    value="www.mkenterprises.com.pk"
+                    value="www.mkentpk.com"
                    />
                    <ContactItem 
                     icon={<Mail className="text-brand-primary" size={18} />}
