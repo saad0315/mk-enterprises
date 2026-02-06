@@ -2,6 +2,12 @@ import React from "react";
 import { CONFIG } from "@/src/constants/config";
 import { CheckCircle2, Globe2, History, Award } from "lucide-react";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about MK Enterprises legacy, our management team, and our commitment to quality in the timber industry since 1972.",
+};
 
 export default function AboutPage() {
   return (
@@ -84,7 +90,7 @@ export default function AboutPage() {
                 <Image
                   src="/about.webp"
                   alt="Industrial Timber"
-                  className="rounded-2xl shadow-lg mb-8 grayscale hover:grayscale-0 transition-all duration-700 mx-auto" 
+                  className="rounded-2xl shadow-lg mb-8 hover:grayscale transition-all duration-700 mx-auto" 
                   width={600}
                   height={300}
                 />

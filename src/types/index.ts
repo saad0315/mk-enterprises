@@ -80,7 +80,7 @@ export interface Config {
   products: { name: string; image: string }[];
   productRange: { title: string; description: string; icon: string }[];
   testimonials: { name: string; role: string; content: string; date: string }[];
-  lumberProducts: { name: string; description: string }[];
-  engineeredProducts: { name: string; description: string }[];
+  lumberProducts: { name: string; description: string, image: string }[];
+  engineeredProducts: { name: string; description: string, image: string }[];
   productDetails: Record<string, ProductDetail>;
 }

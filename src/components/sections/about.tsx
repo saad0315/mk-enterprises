@@ -35,7 +35,7 @@ export default function About() {
               <Image
                 src="/homeAbout.webp"
                 alt="Timber Industry"
-                className=" rounded shadow-inner grayscale hover:grayscale-0 transition-all duration-700"
+                className=" rounded shadow-inner hover:grayscale transition-all duration-700"
                 width={800}
                 height={600}
                 

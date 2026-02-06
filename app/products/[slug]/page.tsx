@@ -4,6 +4,23 @@ import { notFound } from "next/navigation";
 import { Hammer, Ruler, ShieldAlert, Package, ChevronRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import { ProductDetail, LumberProduct, EngineeredProduct } from "@/src/types";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = CONFIG.productDetails[slug];
+
+  if (!product) {
+    return {
+      title: "Product Not Found",
+    };
+  }
+
+  return {
+    title: product.name,
+    description: `Technical specifications, applications, and properties of ${product.name} provided by MK Enterprises.`,
+  };
+}
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

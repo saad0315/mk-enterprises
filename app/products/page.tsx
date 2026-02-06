@@ -2,6 +2,12 @@ import React from "react";
 import { CONFIG } from "@/src/constants/config";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Products Catalog",
+  description: "Browse our extensive catalog of high-quality lumber and engineered wood products, including Burma Teak, Softwood, Plywood, MDF, and more.",
+};
 
 // Helper to slugify product names for links
 const getProductSlug = (name: string) => name.toLowerCase().replace(/\s+/g, "-").replace(/[\(\)]/g, "");
@@ -41,7 +47,7 @@ export default function ProductsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {CONFIG.lumberProducts.map((product, index) => (
-              <ProductCard key={index} name={product.name} description={product.description} />
+              <ProductCard key={index} name={product.name} image={product.image} description={product.description} />
             ))}
           </div>
         </div>
@@ -58,7 +64,7 @@ export default function ProductsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {CONFIG.engineeredProducts.map((product, index) => (
-              <ProductCard key={index} name={product.name} description={product.description} />
+              <ProductCard key={index} image={product.image} name={product.name} description={product.description} />
             ))}
           </div>
         </div>
@@ -67,7 +73,7 @@ export default function ProductsPage() {
   );
 }
 
-function ProductCard({ name, description }: { name: string; description: string }) {
+function ProductCard({ name, description, image }: { name: string; description: string; image:string }) {
   const slug = getProductSlug(name);
   
   return (
@@ -75,12 +81,12 @@ function ProductCard({ name, description }: { name: string; description: string 
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/hero-timber.jpg" 
+          src={image} 
           alt={name} 
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-colors duration-500"></div>
+        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500"></div>
       </div>
 
       {/* Content */}

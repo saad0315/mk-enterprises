@@ -11,8 +11,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${CONFIG.companyName} | Premium Timber & Wood Solutions`,
-  description: `Official website of ${CONFIG.companyName}. Pakistan's leading industrial wood and timber solutions provider specializing in Burma Teak, Softwood, and more.`,
+  title: {
+    default: `${CONFIG.companyName} | Premium Timber & Wood Solutions`,
+    template: `%s | ${CONFIG.companyName}`
+  },
+  description: `Official website of ${CONFIG.companyName}. Pakistan&apos;s leading industrial wood and timber solutions provider specializing in Burma Teak, Softwood, and more.`,
 };
 
 export default function RootLayout({

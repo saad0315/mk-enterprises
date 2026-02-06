@@ -1,9 +1,9 @@
 import React from "react";
 import { CONFIG } from "@/src/constants/config";
-import { TreeDeciduous, Zap, Hammer, Layers, Box, Shield, ArrowRight } from "lucide-react";
+import { TreeDeciduous, Zap, Hammer, Layers, Box, Shield, ArrowRight, LucideIcon } from "lucide-react";
 import Link from "next/link";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, LucideIcon> = {
   TreeDeciduous,
   Zap,
   Hammer,
@@ -14,7 +14,7 @@ const iconMap: Record<string, any> = {
 
 export default function ProductRange() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-brand-primary font-bold tracking-[0.2em] uppercase text-sm">Versatility</span>
@@ -31,7 +31,7 @@ export default function ProductRange() {
             return (
               <div 
                 key={index} 
-                className="group p-8 border border-zinc-100 bg-zinc-50 hover:bg-white hover:shadow-2xl hover:shadow-zinc-200 transition-all duration-500 rounded-2xl relative overflow-hidden"
+                className="group p-8 border border-zinc-100 bg-red-50 hover:bg-red-50 hover:shadow-2xl hover:shadow-zinc-200 transition-all duration-500 rounded-2xl relative overflow-hidden"
               >
                 {/* Decorative Background Icon */}
                 <Icon className="absolute -right-4 -bottom-4 w-32 h-32 text-zinc-200/50 group-hover:text-brand-primary/10 transition-colors duration-500" />
