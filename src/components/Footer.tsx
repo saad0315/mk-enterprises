@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CONFIG } from "@/src/constants/config";
-import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Linkedin, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -15,14 +15,14 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed">
-              Pakistan's leading industrial wood and timber solutions provider. With decades of excellence, we serve our customers with the highest quality products.
+              Pakistan&apos;s leading industrial wood and timber solutions provider. With decades of excellence, we serve our customers with the highest quality products.
             </p>
             <div className="flex items-center gap-4">
               <Link href={CONFIG.socialLinks.facebook} className="bg-zinc-800 p-2 rounded-full hover:bg-brand-primary transition-colors">
                 <Facebook size={18} />
               </Link>
               <Link href={CONFIG.socialLinks.twitter} className="bg-zinc-800 p-2 rounded-full hover:bg-brand-primary transition-colors">
-                <Twitter size={18} />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 4.203L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
               </Link>
               <Link href={CONFIG.socialLinks.linkedin} className="bg-zinc-800 p-2 rounded-full hover:bg-brand-primary transition-colors">
                 <Linkedin size={18} />

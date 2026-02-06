@@ -126,7 +126,8 @@ export const CONFIG: Config = {
         { label: "SPECIFIC GRAVITY", sublabel: "(12% MC)", value: "0.60" },
         { label: "AVERAGE WEIGHT", sublabel: "(12% MC)", value: "673", unit: "kg/m³" },
         { label: "SPECIFIC VOLUMETRIC SHRINKAGE", sublabel: "(GREEN TO 6% M.C)", value: "10.7", unit: "%" },
-        { label: "MODULES OF ELASTICITY", value: "11,977", secondary: "5871" },
+        { label: "MODULES OF ELASTICITY", value: "11,977" },
+        { label: "HARDNESS", value: "5871" },
       ]
     },
     "beech": {
