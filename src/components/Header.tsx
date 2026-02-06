@@ -58,12 +58,12 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-white/95 backdrop-blur-md py-4 border-b border-zinc-100 shadow-sm relative z-50">
+      <nav className="bg-white/95 backdrop-blur-md py-5 border-b border-zinc-100 shadow-sm relative z-50">
         <div className="container mx-auto px-6 flex justify-between items-center">
           {/* Logo Section */}
           <Link href="/" className="flex items-center group">
             <div className="relative overflow-hidden">
-              <Image src="/logo.png" alt={CONFIG.companyName} width={100} height={60} className="h-10 w-auto transition-transform duration-500 group-hover:scale-105" />
+              <Image src="/logo.webp" alt={CONFIG.companyName} width={190} height={60} className="h-auto w-auto transition-transform duration-500 group-hover:scale-105 object-contain" />
             </div>
           </Link>
 

@@ -200,12 +200,12 @@ function EngineeredLayout({ product }: { product: EngineeredProduct }) {
       </section>
 
       <section className="py-24">
-        <div className="container mx-auto px-6 space-y-32">
+        <div className="container mx-auto px-6 space-y-10">
           {product.subProducts.map((sub, index) => (
-            <div key={index} className={`flex flex-col lg:flex-row gap-16 items-start ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+            <div key={index} className={`flex flex-col lg:flex-row gap-10 items-start ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
               
               {/* Text Content */}
-              <div className="lg:w-3/5 space-y-8">
+              <div className="lg:w-3/5 space-y-8  my-auto">
                 <div className="industrial-border pl-6">
                   <h2 className="text-3xl font-black text-brand-text uppercase tracking-tight">{sub.title}</h2>
                 </div>
@@ -238,7 +238,7 @@ function EngineeredLayout({ product }: { product: EngineeredProduct }) {
               {/* Image & Dimensions */}
               <div className="lg:w-2/5 w-full space-y-6">
                 <div className="bg-zinc-50 p-4 rounded-3xl border border-zinc-100 shadow-2xl relative overflow-hidden group">
-                  <div className="aspect-[4/3] w-full relative rounded-2xl overflow-hidden">
+                  <div className="aspect-[8/4] w-full relative rounded-2xl overflow-hidden">
                     <Image src={sub.image} alt={sub.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   <div className="mt-6 p-6 bg-white rounded-xl border border-zinc-100">

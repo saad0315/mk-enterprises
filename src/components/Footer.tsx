@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-zinc-900 text-zinc-300 pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center">
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           {/* Group Companies */}
-          <div>
+          {/* <div>
             <h3 className="text-white font-bold text-lg mb-6 border-l-4 border-brand-primary pl-3">Group Companies</h3>
             <ul className="space-y-3">
               {CONFIG.groupCompanies.map((company) => (
@@ -55,7 +55,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact Details */}
           <div>
