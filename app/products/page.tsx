@@ -86,7 +86,7 @@ function ProductCard({ name, description, image }: { name: string; description: 
           fill
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors duration-500"></div>
+        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-500"></div>
       </div>
 
       {/* Content */}

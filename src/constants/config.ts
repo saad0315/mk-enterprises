@@ -281,7 +281,8 @@ export const CONFIG: Config = {
         { label: "SPECIFIC GRAVITY", sublabel: "(12% MC)", value: "0.63" },
         { label: "AVERAGE WEIGHT", sublabel: "(12% MC)", value: "705", unit: "kg/m³" },
         { label: "SPECIFIC VOLUMETRIC SHRINKAGE", sublabel: "(GREEN TO 6% M.C)", value: "10.8", unit: "%" },
-        { label: "MODULES OF ELASTICITY", value: "12,549", secondary: "5738" },
+        { label: "MODULES OF ELASTICITY", value: "12,549" },
+        { label: "HARDESS", value: "5375" },
       ]
     },
     "soft-maple": {
@@ -465,28 +466,28 @@ export const CONFIG: Config = {
           title: "Fancy Plywood/MDF",
           applications: ["Furniture", "Interior decorative wood ornamentation", "Cabinet doors", "Paneling", "Exterior wood work", "Racks and Partitions etc"],
           description: "Available in wide range of wood veneers like: red oak, maple, sapele, beech, walnut, ebony, wenge, Burma teak, white ash, ash and many more. This aesthetically pleasing hardwood veneer with top notch quality especially designed to meet your wood based decorative needs.",
-          image: "/products/plywood.webp",
+          image: "/engineered/fancy_plywood_mdf.webp",
           dimensions: "Size / thickness: 2.5mm x 4ft x 8ft"
         },
         {
           title: "Marine Plywood",
           applications: ["Bathroom and kitchen wall subflooring", "Lake platforms", "Deck", "Boat Dock", "Feature walls in motor homes"],
           description: "Marine plywood is specifically created to withstand water subversion. The Rolls Royce of Plywood; Marine Plywood is the absolute best when it comes to multi-perform product. Structured with quality grade face and core veneers so that it can prevent moisture from getting collected in the voids. Its self-sustaining qualities require less maintenance, making it stay perfectly in shape for decades.",
-          image: "/products/plywood.webp",
+          image: "/engineered/marine_plywood.webp",
           dimensions: "Thickness: 12mm x 4ft x 8ft, 18mm x 4ft x 8ft"
         },
         {
           title: "Film Faced",
           applications: ["Construction and Building industry", "Transport Equipment containers", "Truck, trailer, wagon floors", "Shear", "Furniture", "Framework", "Hoardings", "Interior and exterior paneling", "Fencing"],
           description: "This lightweight, corrosion and water resistant and durable material is the most preferred choice to be used in open environment. Popular and birch film faced plywood are available keeping in view the varying needs of application. This plywood demands low maintenance because of the ease it provides with cleaning and cutting. Film faced plywood is multipurpose and has hard wearing tensile, creasing and shearing strength.",
-          image: "/products/plywood.webp",
+          image: "/engineered/film_faced.webp",
           dimensions: "Size: 16mm x 4ft x 8ft, 18mm x 4ft x 8ft"
         },
         {
           title: "Commercial Ply",
           applications: ["Furniture", "Cabinets", "Shear", "Decking", "Roofing", "Half pipes", "Concrete Forms"],
           description: "Commercial Plywood is one of the strongest of plywood available. This type of plywood is trusted to be used in homes, commercial buildings, office furniture due to its dimensional accuracy and fine thickness. Top class, high density, commercial plywood with numerous specifications, has the ability to endure rough conditions.",
-          image: "/products/plywood.webp",
+          image: "/engineered/commercial_ply.webp",
           dimensions: "Dimensions: 5mm x 4ft x 8ft, 11mm x 4ft x 8ft, 18mm x 4ft x 8ft"
         }
       ]
@@ -507,7 +508,7 @@ export const CONFIG: Config = {
             "Storage units"
           ],
           description: "Formulated from wood fibers glued under heat and pressure, MDF is a kind of fiberboard with a fine sanded or decorative surface. MDF is created with the finest of particles and can be easily drilled, filled, machined or drilled without any exterior damage. MDF is a wood panel product which is reconstituted from wood fibers and therefore is smoothly dense throughout with even sides which makes it excellent for machining. MDF is comparatively more water enduring as compared to particle board. It is available in raw form with a fine sanded surface or with decorative overlay such as wood veneer, melamine paper or vinyl.",
-          image: "/products/mdf.webp",
+          image: "/engineered/mdf.webp",
           dimensions: "W x L: 4ft x 8ft \n Thickness: 2.3mm, 3.4mm, 7mm, 10mm, 11mm, 16mm, 17mm, 24mm"
         }
       ]
@@ -520,21 +521,21 @@ export const CONFIG: Config = {
           title: "Wood Plastic Composite (WPC)",
           applications: ["Fencing", "Decking", "Park furniture", "Sheeting", "Posts and poles"],
           description: "Wood Plastic Composite (WPC) is here to stay as it soon becomes the future lumber. Perfectly shaped to appear like wood products but are more efficient and versatile in terms of design, finishing, stiffness and joining. The ultimate choice for exterior application, demanding mould, weather and water resistance. These wood and plastic hybrids are exceptionally ecofriendly and durable, in terms of performance.",
-          image: "/products/wood-plastic-composite.webp",
+          image: "/engineered/wood_plastic_composite_wpc.webp",
           dimensions: "Custom sizes available based on industrial requirements."
         },
         {
           title: "WPC Outdoor Deck",
           applications: ["Outdoor Decking", "Poolside Platforms", "Garden Pathways"],
           description: "Our finest quality WPC for decking is a reliable solution to your decking needs. Durable, water resistant, ecofriendly and to top it all, does not require paint, stain or seal. The WPC decking is wear-resistant with qualities like: not attracting mold due to its inability to store water or rot. The colors stay as good as new without splitting or rotting. The wood counterpart in terms of appearance and handling but is as durable as plastic.",
-          image: "/products/wood-plastic-composite.webp",
+          image: "/engineered/wpc_outdoor_deck.webp",
           dimensions: "Available in standard deck plank dimensions."
         },
         {
           title: "WPC Wall Panel",
           applications: ["Wall paneling", "Ceiling and Partition Boards", "Exterior Facades"],
           description: "Now you can add the panache of wood and the durability of plastic to your wood panels with the ease to install and low maintenance WPC wall panels. Available in a range of colors, patterns and widths for you to add a unique touch to your walls. Environment Friendly, fire, UV rays, impact and water resistant, these WPC wall panels also rid you from the complexities of paint, wrapping or uneven finishing.",
-          image: "/products/wood-plastic-composite.webp",
+          image: "/engineered/wpc_wall_panel.webp",
           dimensions: "Variable widths and patterns available."
         }
       ]
@@ -547,14 +548,14 @@ export const CONFIG: Config = {
           title: "Door Skin (Veneered/Regular)",
           applications: ["Low End Projects", "Commercial Projects", "Office Buildings"],
           description: "Door skins are the perfect alternative to fit to your door without having to worry about removing it all. A perfect alternative to traditional all-wood doors and can be easily used to add color, design and finish to your doors. Easy to stick and maintain with the most durable finish, without any sap, stains or pest attacks on your door.",
-          image: "/products/door-skin.webp",
+          image: "/engineered/door_skin.webp",
           dimensions: "Length: 7 ft \n Widths: 690mm, 770mm, 850mm, 920mm, 990mm, 1050mm"
         },
         {
           title: "Door Skin (Melamine)",
           applications: ["Interior and exterior door skins", "Partition skins", "Door paneling"],
           description: "Melamine door skins are perfectly shaped to appear like wood products but are more efficient and versatile in terms of design and finishing. They provide a high-resistance surface that is easy to clean and maintain while offering a premium look for commercial and residential door projects.",
-          image: "/products/door-skin.webp",
+          image: "/engineered/door_skin_melamine.webp",
           dimensions: "Widths: 690mm, 770mm, 850mm, 920mm, 990mm, 1050mm"
         }
       ]
@@ -567,7 +568,7 @@ export const CONFIG: Config = {
           title: "PVC Wall Panel",
           applications: ["Kitchens", "Decorative wall panels", "Dining Rooms", "Living rooms"],
           description: "PVC wall panels are an affordable yet an attractive alternative to tiles. Not just, are they durable in comparison but are handy in terms of installation and maintenance. Available in a wide range of colors, finishes and designs, these wall panels are water proof and are specifically the ideal choice to be used in dining room, decorative walls and kitchens. Time to replace the traditional tiles, with something that is much more attractive and easy to handle.",
-          image: "/products/pvc-wall-panel.webp",
+          image: "/engineered/pvc_wall_panel.webp",
           dimensions: "Length: 3 meter \n Width: 10 inches"
         }
       ]
@@ -587,7 +588,7 @@ export const CONFIG: Config = {
             "Boards for insulation ceiling"
           ],
           description: "Soft board is a low density wood panel fiberboard, so easily manageable and lightweight that it is considered an ideal choice for wood work within corporate offices, commercial buildings, and educational institutes and at homes. The thermal and sound absorbing quality makes it a perfect choice for place with a sound proof or energy saving ambience.",
-          image: "/products/soft-board.webp",
+          image: "/engineered/softboard.webp",
           dimensions: "10mm x 4ft x 8ft"
         }
       ]
@@ -606,7 +607,7 @@ export const CONFIG: Config = {
             "Sliding doors"
           ],
           description: "UV coated MDF comes with a number of benefits like a variety of colors, gloss, and textures. Available in thick and thin finishes, it has the beauty and strength to fulfill your decorative needs through polished wood. It is highly durable, moisture resistant, and environmentally friendly, making it an ideal choice for modern interior furniture.",
-          image: "/products/uv-mdf.webp",
+          image: "/engineered/uv_mdf.webp",
           dimensions: "W x L: 4ft x 8ft \n Thickness options available upon request."
         }
       ]

@@ -79,9 +79,16 @@ function LumberLayout({ product }: { product: LumberProduct }) {
                   <div className="space-y-6">
                     {product.ratings.map((rating, i) => (
                       <div key={i} className="flex items-center gap-4">
-                        <div className="w-8 h-8 relative shrink-0">
-                           <Image src="/next.svg" alt="icon" fill className="object-contain opacity-50" />
+                        {/* Dynamic Rating Icons */}
+                        <div className="w-10 h-10 relative shrink-0 bg-red-100 rounded-xl shadow-xl ">
+                           <Image 
+                             src={`/product-icon-${i + 1}.webp`} 
+                             alt={rating.label} 
+                             fill 
+                             className="object-contain p-1"
+                           />
                         </div>
+                        
                         <div className="flex-grow space-y-2">
                           <div className="flex justify-between text-[11px] font-bold text-zinc-500 tracking-tighter uppercase">
                             <span>{rating.label}</span>
@@ -104,16 +111,16 @@ function LumberLayout({ product }: { product: LumberProduct }) {
       <section className="py-20 bg-zinc-900 text-white overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-1 bg-brand-primary"></div>
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-6">
             {product.specs.map((spec, i) => (
               <div key={i} className="text-center group">
-                <div className="text-4xl md:text-5xl font-black text-brand-primary mb-2 transition-transform duration-500 group-hover:scale-110">
-                  {spec.value}{spec.unit && <span className="text-sm ml-1 text-zinc-400 font-bold">{spec.unit}</span>}
+                <div className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-black text-brand-primary mb-2 transition-transform duration-500 group-hover:scale-110">
+                  {spec.value}{spec.unit && <span className="text-xs ml-0.5 text-zinc-400 font-bold">{spec.unit}</span>}
                 </div>
-                <div className="text-[10px] md:text-[11px] font-bold text-zinc-400 uppercase tracking-[0.1em] leading-tight">
-                  {spec.label}{spec.sublabel && <div className="text-[9px] opacity-60 font-normal mt-1">{spec.sublabel}</div>}
+                <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-[0.1em] leading-tight">
+                  {spec.label}{spec.sublabel && <div className="text-[9px] opacity-60 font-normal mt-1 lowercase capitalize-first">{spec.sublabel}</div>}
                 </div>
-                {spec.secondary && <div className="mt-4 text-3xl font-black text-white border-t border-zinc-800 pt-4">{spec.secondary}</div>}
+                {spec.secondary && <div className="mt-4 text-2xl font-black text-white border-t border-zinc-800 pt-4">{spec.secondary}</div>}
               </div>
             ))}
           </div>
