@@ -1,4 +1,6 @@
-export const CONFIG = {
+import { Config } from "../types";
+
+export const CONFIG: Config = {
   companyName: "MK Enterprises",
   contact: {
     phone: "021 32730 946",
@@ -15,7 +17,7 @@ export const CONFIG = {
   navLinks: [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Company Profile", href: "/profile" },
+    // { name: "Company Profile", href: "/profile" },
     {
       name: "Products",
       href: "/products",
@@ -38,12 +40,12 @@ export const CONFIG = {
     "World Lumber Trading",
   ],
   products: [
-    { name: "Burma Teak", image: "/product-burma-teak.png" },
-    { name: "Softwood", image: "/product-soft-wood.png" },
-    { name: "Plywood", image: "/product-plywood.png" },
-    { name: "Medium Light Hardwood", image: "/hero-timber.jpg" },
-    { name: "Laminate Flooring", image: "/hero-timber.jpg" },
-    { name: "PVC Edge Banding", image: "/hero-timber.jpg" },
+    { name: "Burma Teak", image: "/lumber/burma_teak.webp" },
+    { name: "Softwood", image: "/lumber/softwood.webp" },
+    { name: "Beech", image: "/lumber/beech.webp" },
+    { name: "Hard Maple", image: "/lumber/Hard-Maple.webp" },
+    { name: "Red Oak", image: "/lumber/red-oak.webp" },
+    { name: "Cherry", image: "/lumber/cherry.webp" },
   ],
   productRange: [
     { title: "Burma Teak", description: "Premium quality teak for high-end furniture and construction.", icon: "TreeDeciduous" },
@@ -106,7 +108,6 @@ export const CONFIG = {
   productDetails: {
     "burma-teak": {
       name: "Burma Teak",
-      image: "/product-burma-teak.png",
       textureImage: "/product-burma-teak.png",
       properties: {
         working: "Burma Teak works easily with hand and machine tools, and nails, screws and glues well. It holds paint and stain very well and can be polished to an exceptional finish. It dries slowly, and care is needed to avoid kilning degrade. Burma Teak has good dimensional stability.",
@@ -183,7 +184,7 @@ export const CONFIG = {
         }
       ]
     },
-    "wood-plastic-composite": {
+    "wood-plastic-composite-wpc": {
       name: "Wood Plastic Composite",
       type: "engineered",
       subProducts: [

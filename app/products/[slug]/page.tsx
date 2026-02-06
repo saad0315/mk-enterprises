@@ -3,10 +3,11 @@ import { CONFIG } from "@/src/constants/config";
 import { notFound } from "next/navigation";
 import { Hammer, Ruler, ShieldAlert, Package, ChevronRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { ProductDetail, LumberProduct, EngineeredProduct } from "@/src/types";
 
-export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
+export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const product = (CONFIG as any).productDetails[slug];
+  const product = CONFIG.productDetails[slug];
 
   if (!product) {
     notFound();
@@ -14,14 +15,14 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
 
   // Determine which layout to use
   if (product.type === "engineered") {
-    return <EngineeredLayout product={product} />;
+    return <EngineeredLayout product={product as EngineeredProduct} />;
   }
 
-  return <LumberLayout product={product} />;
+  return <LumberLayout product={product as LumberProduct} />;
 }
 
 /* --- LAYOUT 1: LUMBER PRODUCTS (Technical) --- */
-function LumberLayout({ product }: { product: any }) {
+function LumberLayout({ product }: { product: LumberProduct }) {
   return (
     <div className="flex flex-col w-full bg-white">
       <section className="bg-zinc-900 py-16 relative overflow-hidden">
@@ -59,7 +60,7 @@ function LumberLayout({ product }: { product: any }) {
 
                 <div className="bg-zinc-50 p-8 rounded-2xl border border-zinc-100">
                   <div className="space-y-6">
-                    {product.ratings.map((rating: any, i: number) => (
+                    {product.ratings.map((rating, i) => (
                       <div key={i} className="flex items-center gap-4">
                         <div className="w-8 h-8 relative shrink-0">
                            <Image src="/next.svg" alt="icon" fill className="object-contain opacity-50" />
@@ -87,7 +88,7 @@ function LumberLayout({ product }: { product: any }) {
         <div className="absolute top-0 left-0 w-full h-1 bg-brand-primary"></div>
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {product.specs.map((spec: any, i: number) => (
+            {product.specs.map((spec, i) => (
               <div key={i} className="text-center group">
                 <div className="text-4xl md:text-5xl font-black text-brand-primary mb-2 transition-transform duration-500 group-hover:scale-110">
                   {spec.value}{spec.unit && <span className="text-sm ml-1 text-zinc-400 font-bold">{spec.unit}</span>}
@@ -107,7 +108,7 @@ function LumberLayout({ product }: { product: any }) {
         <section className="py-24 bg-zinc-50">
           <div className="container mx-auto px-6">
             <div className="space-y-24">
-              {product.regionalSpecs.map((reg: any, i: number) => (
+              {product.regionalSpecs.map((reg, i) => (
                 <div key={i} className="space-y-10">
                   <div className="flex items-center gap-4">
                     <div className="h-px bg-zinc-200 flex-grow"></div>
@@ -118,7 +119,7 @@ function LumberLayout({ product }: { product: any }) {
                   </div>
 
                   <div className="grid grid-cols-1 gap-12">
-                    {reg.subRegions.map((sub: any, j: number) => (
+                    {reg.subRegions.map((sub, j) => (
                       <div key={j} className="bg-white rounded-2xl border border-zinc-100 shadow-xl overflow-hidden">
                         <div className="bg-zinc-900 text-white px-6 py-3 text-sm font-bold tracking-widest uppercase">
                           {sub.title}
@@ -127,7 +128,7 @@ function LumberLayout({ product }: { product: any }) {
                           <table className="w-full text-left border-collapse">
                             <thead>
                               <tr className="bg-zinc-50 border-b border-zinc-100">
-                                {sub.headers.map((h: string, k: number) => (
+                                {sub.headers.map((h, k) => (
                                   <th key={k} className="px-6 py-4 text-[11px] font-black text-zinc-400 uppercase tracking-wider">
                                     {h}
                                   </th>
@@ -135,9 +136,9 @@ function LumberLayout({ product }: { product: any }) {
                               </tr>
                             </thead>
                             <tbody>
-                              {sub.rows.map((row: string[], k: number) => (
+                              {sub.rows.map((row, k) => (
                                 <tr key={k} className="border-b border-zinc-50 last:border-0 hover:bg-zinc-50/50 transition-colors">
-                                  {row.map((cell: string, l: number) => (
+                                  {row.map((cell, l) => (
                                     <td key={l} className="px-6 py-4 text-sm font-medium text-zinc-600">
                                       {cell}
                                     </td>
@@ -161,7 +162,7 @@ function LumberLayout({ product }: { product: any }) {
 }
 
 /* --- LAYOUT 2: ENGINEERED PRODUCTS (Catalog/Grid) --- */
-function EngineeredLayout({ product }: { product: any }) {
+function EngineeredLayout({ product }: { product: EngineeredProduct }) {
   return (
     <div className="flex flex-col w-full bg-white">
       {/* Dynamic Header */}
@@ -176,7 +177,7 @@ function EngineeredLayout({ product }: { product: any }) {
 
       <section className="py-24">
         <div className="container mx-auto px-6 space-y-32">
-          {product.subProducts.map((sub: any, index: number) => (
+          {product.subProducts.map((sub, index) => (
             <div key={index} className={`flex flex-col lg:flex-row gap-16 items-start ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
               
               {/* Text Content */}
@@ -191,7 +192,7 @@ function EngineeredLayout({ product }: { product: any }) {
                       <CheckCircle2 size={16} /> Applications & Uses
                     </h3>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
-                      {sub.applications.map((app: string, i: number) => (
+                      {sub.applications.map((app, i) => (
                         <li key={i} className="text-zinc-500 text-sm flex items-center gap-2">
                           <div className="w-1.5 h-1.5 bg-brand-primary rounded-full"></div> {app}
                         </li>
@@ -204,7 +205,7 @@ function EngineeredLayout({ product }: { product: any }) {
                       <Package size={16} /> Product Description
                     </h3>
                     <p className="text-zinc-600 leading-relaxed text-lg italic">
-                      "{sub.description}"
+                      &quot;{sub.description}&quot;
                     </p>
                   </div>
                 </div>

@@ -13,7 +13,7 @@ export default function ProductsPage() {
       <section className="bg-zinc-900 py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image 
-            src="/hero-timber.jpg" 
+            src="/hero.webp" 
             alt="Background" 
             fill 
             className="object-cover"

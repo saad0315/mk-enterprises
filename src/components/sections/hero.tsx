@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { Arrow } from "radix-ui/internal";
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
@@ -11,11 +10,11 @@ export default function Hero() {
       {/* Placeholder for Hero Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-timber.jpg"
+          src="/hero.webp"
           alt="Timber background"
-          className="w-full h-full object-cover brightness-50"
-          width={100}
-          height={100}
+          fill
+          priority
+          className="object-cover brightness-50"
         />
       </div>
 
@@ -26,7 +25,7 @@ export default function Hero() {
             <span className="text-brand-primary">Industrial Excellence</span>
           </h1>
           <p className="text-xl mb-8 text-zinc-200 leading-relaxed">
-            MK Enterprises is Pakistan's premier supplier of high-quality Burma
+            MK Enterprises is Pakistan&apos;s premier supplier of high-quality Burma
             Teak, Softwood, and specialized timber products for over 60 years.
           </p>
           <div className="flex flex-wrap gap-4">

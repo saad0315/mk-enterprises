@@ -18,15 +18,10 @@ export default function About() {
               </h2>
             </div>
             <p className="text-zinc-600 mb-6 leading-relaxed text-lg">
-              MK Enterprises (formerly SAK Group) has been at the forefront of
-              the timber industry in Pakistan. We cater to our customers'
-              requirements with our own sawmills and a vast network of
-              warehouses.
+              MK Enterprises is one of Pakistan&apos;s leading timber exporters, importers, and traders. Based in the heart of Karachi, we carry a legacy of excellence starting from 1972.
             </p>
             <p className="text-zinc-600 mb-8 leading-relaxed">
-              Our legacy is built on providing the finest wood products, from
-              Burma Teak to specialized softwood, ensuring that every project we
-              supply meets the highest standards of durability and aesthetics.
+              We specialize in premium Hardwood sourced globally and are proud introducers of Southern Yellow Pine to the country, serving industries from construction to interior design.
             </p>
             <Link
               href="/about"
@@ -36,13 +31,14 @@ export default function About() {
             </Link>
           </div>
           <div className="lg:w-1/2 relative">
-            <div className="bg-zinc-100 rounded-lg p-4 shadow-2xl">
+            <div className="bg-zinc-100 rounded-lg p-4 shadow-2xl ">
               <Image
-                src="/about.jpg"
+                src="/homeAbout.webp"
                 alt="Timber Industry"
-                className="rounded shadow-inner grayscale hover:grayscale-0 transition-all duration-700"
-                width={300}
-                height={400}
+                className=" rounded shadow-inner grayscale hover:grayscale-0 transition-all duration-700"
+                width={800}
+                height={600}
+                
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-brand-primary text-white p-8 rounded-lg shadow-xl hidden md:block">

@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       <Hero />
+      <About />
       <Products />
       <ProductRange />
-      <About />
       <Testimonials />
     </div>
   );

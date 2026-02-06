@@ -34,7 +34,7 @@ export default function Testimonials() {
             <h2 className="text-4xl font-bold mt-2 text-brand-text">Client Testimonials</h2>
           </div>
           <p className="max-w-md text-zinc-500 italic">
-            "Building long-term relationships through quality and trust is our core mission."
+            &quot;Building long-term relationships through quality and trust is our core mission.&quot;
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function Testimonials() {
                   </div>
                   
                   <p className="text-zinc-600 mb-8 flex-grow leading-relaxed italic">
-                    "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                   </p>
                   
                   <div className="flex items-center gap-4 border-t border-zinc-50 pt-6">
