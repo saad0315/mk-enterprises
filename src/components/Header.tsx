@@ -2,12 +2,19 @@
 
 import Link from "next/link";
 import { CONFIG } from "@/src/constants/config";
-import { Phone, Mail, MapPin, ChevronDown, Facebook, Twitter, Linkedin, Menu } from "lucide-react";
+import { Phone, Mail, MapPin, ChevronDown, Facebook, Twitter, Linkedin, Menu, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 
+// Helper to slugify product names for links
+const getProductSlug = (name: string) => name.toLowerCase().replace(/\s+/g, "-").replace(/[\(\)]/g, "");
+
 export default function Header() {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+
+  // Extract first 4 products for preview
+  const previewLumber = CONFIG.lumberProducts ? CONFIG.lumberProducts.slice(0, 4) : [];
+  const previewEngineered = CONFIG.engineeredProducts ? CONFIG.engineeredProducts.slice(0, 4) : [];
 
   return (
     <header className="w-full sticky top-0 z-50">
@@ -58,7 +65,7 @@ export default function Header() {
           <ul className="hidden lg:flex items-center gap-10">
             {CONFIG.navLinks.map((link) => (
               <li key={link.name} className="relative">
-                {link.dropdown ? (
+                {link.name === "Products" ? (
                   <div 
                     className="flex items-center gap-1.5 cursor-pointer text-zinc-700 hover:text-brand-primary font-bold text-[15px] uppercase tracking-wide py-2 transition-colors group"
                     onMouseEnter={() => setIsProductsOpen(true)}
@@ -67,20 +74,58 @@ export default function Header() {
                     {link.name}
                     <ChevronDown size={14} className={`transition-transform duration-300 ${isProductsOpen ? 'rotate-180' : ''}`} />
                     
-                    {/* Refined Dropdown Design */}
+                    {/* Mega Menu Dropdown */}
                     {isProductsOpen && (
-                      <ul className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-zinc-100 rounded-lg py-3 w-56 animate-in fade-in slide-in-from-top-2 duration-200">
-                        {link.dropdown.map((sub) => (
-                          <li key={sub.name}>
+                      <div className="absolute top-full -left-20 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-zinc-100 rounded-xl p-8 w-[600px] z-50 animate-in fade-in slide-in-from-top-3 duration-200 grid grid-cols-2 gap-8 cursor-default">
+                        
+                        {/* Column 1: Lumber Products */}
+                        <div>
+                          <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-4 pb-2 border-b border-zinc-100">
+                            Lumber Products
+                          </h3>
+                          <ul className="space-y-3">
+                            {previewLumber.map((prod) => (
+                              <li key={prod.name}>
+                                <Link 
+                                  href={`/products/${getProductSlug(prod.name)}`}
+                                  className="block text-sm font-semibold text-zinc-600 hover:text-brand-primary hover:translate-x-1 transition-all"
+                                >
+                                  {prod.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Column 2: Engineered Products */}
+                        <div className="flex flex-col h-full">
+                          <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-4 pb-2 border-b border-zinc-100">
+                            Engineered Products
+                          </h3>
+                          <ul className="space-y-3 mb-6">
+                            {previewEngineered.map((prod) => (
+                              <li key={prod.name}>
+                                <Link 
+                                  href={`/products/${getProductSlug(prod.name)}`}
+                                  className="block text-sm font-semibold text-zinc-600 hover:text-brand-primary hover:translate-x-1 transition-all"
+                                >
+                                  {prod.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                          
+                          <div className="mt-auto pt-6 border-t border-zinc-50">
                             <Link 
-                              href={sub.href}
-                              className="block px-6 py-2.5 text-[14px] font-semibold text-zinc-600 hover:bg-zinc-50 hover:text-brand-primary transition-all border-l-2 border-transparent hover:border-brand-primary"
+                              href="/products" 
+                              className="group flex items-center justify-center gap-2 w-full bg-zinc-900 hover:bg-brand-primary text-white text-xs font-bold uppercase tracking-widest py-3 rounded-lg transition-all"
                             >
-                              {sub.name}
+                              View All Products <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
-                          </li>
-                        ))}
-                      </ul>
+                          </div>
+                        </div>
+
+                      </div>
                     )}
                   </div>
                 ) : (
